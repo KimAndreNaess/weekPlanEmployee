@@ -17,18 +17,27 @@ public class EmployeeService {
     public Collection<Employee> getAllEmployees(){
         return employeeDao.getAllEmployees();
     }
-    public Employee getEmployeeByID(int id){
-        return this.employeeDao.getEmployeeByID(id);
-    }
 
     public void removeEmployeeByID(int id) {
         this.employeeDao.removeEmployeeByID(id);
     }
-    public void upDateEmployee(Employee employee){
-        this.employeeDao.upDateEmployee(employee);
+    public Employee getEmployeeByID(int id){
+        return this.employeeDao.getEmployeeByID(id);
     }
-
+    public void upDateEmployee(Employee employee){
+        if(checkValidGroup(employee.getGroup())) {
+            this.employeeDao.upDateEmployee(employee);
+        }
+        else
+            System.out.println("Error in input, can not update a new employee");
+    }
     public void insertEmployee(Employee employee) {
-        this.employeeDao.insertEmployeeToDB(employee);
+        if(checkValidGroup(employee.getGroup()))
+            this.employeeDao.insertEmployeeToDB(employee);
+        else
+            System.out.println("Error in input, can not insert a new employee");
+    }
+    private boolean checkValidGroup(int group) {
+        return group >= 1 && group <= 2;
     }
 }

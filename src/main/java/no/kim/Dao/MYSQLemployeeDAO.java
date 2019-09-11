@@ -3,14 +3,16 @@ package no.kim.Dao;
 import no.kim.Entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
-
+    @Repository
     @Qualifier("SQL")
 public class MYSQLemployeeDAO implements EmployeeDao {
     @Override
     public Collection<Employee> getAllEmployees() {
-        return null;
+        return new ArrayList<Employee>();
     }
 
     @Override

@@ -19,18 +19,22 @@ public class EmployeeController {
     public Collection<Employee> getAllEmployees(){
         return employeeService.getAllEmployees();
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Employee getEmployeeByID(@PathVariable("id") int id){
         return employeeService.getEmployeeByID(id);
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteEmployeeByID(@PathVariable("id") int id){
         employeeService.removeEmployeeByID(id);
     }
+
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void upDateEmployeeByID(@RequestBody Employee employee){
         employeeService.upDateEmployee(employee);
     }
+
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertEmployee(@RequestBody Employee employee){
         employeeService.insertEmployee(employee);
