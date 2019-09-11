@@ -1,14 +1,17 @@
 package no.kim.Service;
 
 import no.kim.Dao.EmployeeDao;
+import no.kim.Dao.FakeEmployeeDaoImpl;
 import no.kim.Entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 @Service
 public class EmployeeService {
     @Autowired
+    @Qualifier("fakedata")
     private EmployeeDao employeeDao;
 
     public Collection<Employee> getAllEmployees(){
@@ -26,6 +29,6 @@ public class EmployeeService {
     }
 
     public void insertEmployee(Employee employee) {
-        employeeDao.insertEmployeeToDB(employee);
+        this.employeeDao.insertEmployeeToDB(employee);
     }
 }
