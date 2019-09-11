@@ -38,6 +38,6 @@ public class EmployeeService {
             System.out.println("Error in input, can not insert a new employee");
     }
     private boolean checkValidGroup(int group) {
-        return group >= 1 && group <= 2;
+        return group >= 1 && group <= 3;
     }
 }
