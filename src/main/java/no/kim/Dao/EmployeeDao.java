@@ -26,5 +26,12 @@ public class EmployeeDao {
         return this.employees.values();
     }
 
+    public Employee getEmployeeByID(int id){
+        return this.employees.get(id);
+    }
 
+
+    public void removeEmployeeByID(int id) {
+        this.employees.remove(id);
+    }
 }
