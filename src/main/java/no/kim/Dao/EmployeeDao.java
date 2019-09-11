@@ -29,6 +29,13 @@ public class EmployeeDao {
     public Employee getEmployeeByID(int id){
         return this.employees.get(id);
     }
+    public void upDateEmployee(Employee employee){
+        Employee e = employees.get(employee.getId());
+        e.setGroup(employee.getGroup());
+        e.setFirstName(e.getFirstName());
+        e.setLastName(e.getLastName());
+        employees.put(employee.getId(), employee);
+    }
 
 
     public void removeEmployeeByID(int id) {

@@ -21,4 +21,7 @@ public class EmployeeService {
     public void removeEmployeeByID(int id) {
         this.employeeDao.removeEmployeeByID(id);
     }
+    public void upDateEmployee(Employee employee){
+        this.employeeDao.upDateEmployee(employee);
+    }
 }

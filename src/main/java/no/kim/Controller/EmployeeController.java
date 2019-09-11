@@ -3,11 +3,10 @@ package no.kim.Controller;
 import no.kim.Entity.Employee;
 import no.kim.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.Collection;
 @RestController
 @RequestMapping("/employees")
@@ -27,5 +26,9 @@ public class EmployeeController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteEmployeeByID(@PathVariable("id") int id){
         employeeService.removeEmployeeByID(id);
+    }
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteEmployeeByID(@RequestBody Employee employee){
+        employeeService.upDateEmployee(employee);
     }
 }
