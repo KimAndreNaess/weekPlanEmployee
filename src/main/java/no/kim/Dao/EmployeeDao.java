@@ -41,4 +41,8 @@ public class EmployeeDao {
     public void removeEmployeeByID(int id) {
         this.employees.remove(id);
     }
+
+    public void insertEmployeeToDB(Employee employee) {
+        this.employees.put(employee.getId(),employee);
+    }
 }

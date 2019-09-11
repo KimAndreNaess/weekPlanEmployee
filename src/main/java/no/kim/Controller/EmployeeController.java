@@ -28,7 +28,11 @@ public class EmployeeController {
         employeeService.removeEmployeeByID(id);
     }
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteEmployeeByID(@RequestBody Employee employee){
+    public void upDateEmployeeByID(@RequestBody Employee employee){
         employeeService.upDateEmployee(employee);
+    }
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void insertEmployee(@RequestBody Employee employee){
+        employeeService.insertEmployee(employee);
     }
 }

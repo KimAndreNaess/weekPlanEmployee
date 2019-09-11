@@ -24,4 +24,8 @@ public class EmployeeService {
     public void upDateEmployee(Employee employee){
         this.employeeDao.upDateEmployee(employee);
     }
+
+    public void insertEmployee(Employee employee) {
+        employeeDao.insertEmployeeToDB(employee);
+    }
 }
