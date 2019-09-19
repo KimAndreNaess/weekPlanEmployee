@@ -1,7 +1,6 @@
 package no.kim.Service;
 
 import no.kim.Dao.EmployeeDao;
-import no.kim.Dao.FakeEmployeeDaoImpl;
 import no.kim.Entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -24,6 +23,7 @@ public class EmployeeService {
     public Employee getEmployeeByID(int id){
         return this.employeeDao.getEmployeeByID(id);
     }
+
     public void upDateEmployee(Employee employee){
         if(checkValidGroup(employee.getGroup())) {
             this.employeeDao.upDateEmployee(employee);
@@ -31,12 +31,16 @@ public class EmployeeService {
         else
             System.out.println("Error in input, can not update a new employee");
     }
+
     public void insertEmployee(Employee employee) {
         if(checkValidGroup(employee.getGroup()))
             this.employeeDao.insertEmployeeToDB(employee);
         else
             System.out.println("Error in input, can not insert a new employee");
     }
+
+
+    //the group can only be from 1 to 3
     private boolean checkValidGroup(int group) {
         return group >= 1 && group <= 3;
     }

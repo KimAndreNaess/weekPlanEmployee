@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Repository
 @Qualifier("fakedata")
-public class FakeEmployeeDaoImpl implements EmployeeDao {
+public class FakeEmployeeRepository implements EmployeeDao {
     private static Map<Integer, Employee> employees;
 
     static {
