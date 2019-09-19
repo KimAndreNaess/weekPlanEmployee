@@ -20,6 +20,7 @@ public class EmployeeService {
     public void removeEmployeeByID(int id) {
         this.employeeDao.removeEmployeeByID(id);
     }
+
     public Employee getEmployeeByID(int id){
         return this.employeeDao.getEmployeeByID(id);
     }
