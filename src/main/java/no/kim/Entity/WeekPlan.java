@@ -1,5 +1,7 @@
 package no.kim.Entity;
 
+import no.kim.Service.EmployeeService;
+
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
@@ -10,10 +12,14 @@ import java.util.Locale;
 public class WeekPlan {
     Collection<Employee> workingEmployeesThisWeek;
     int weekNumber;
+    Collection<Employee> allEmployees;
+    EmployeeService service;
 
-    public WeekPlan(Collection<Employee> employees) {
-        System.out.println("lager");
-        this.weekNumber = generateWeekNumber();
+    public WeekPlan() {
+        allEmployees = service.getAllEmployees();
+        weekNumber = generateWeekNumber();
+        allEmployees.stream().filter(e->e.getGroup()%weekNumber==0).forEach(e->workingEmployeesThisWeek.add(e));
+
 
     }
 
@@ -27,5 +33,9 @@ public class WeekPlan {
 
     public int getWeekNumber() {
         return weekNumber;
+    }
+
+    public Collection<Employee> getEmployees() {
+        return allEmployees;
     }
 }
