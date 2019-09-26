@@ -2,6 +2,7 @@ package no.kim.Service;
 
 import no.kim.Dao.EmployeeDao;
 import no.kim.Entity.Employee;
+import no.kim.Entity.WeekPlan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ public class EmployeeService {
     @Autowired
     @Qualifier("fakedata")
     private EmployeeDao employeeDao;
+    private WeekPlan weekPlan;
 
     public Collection<Employee> getAllEmployees(){
         return employeeDao.getAllEmployees();

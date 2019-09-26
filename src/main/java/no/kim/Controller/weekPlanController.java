@@ -21,4 +21,17 @@ public class weekPlanController {
     @RequestMapping(method = RequestMethod.GET)
     public Collection<Employee> getThisWeekPlan(){
         return weekPlanService.getThisWeekPlan();}
+
+
+        @RequestMapping(value = "/h",method = RequestMethod.GET)
+    public int getWeekNumber(){
+        return weekPlanService.getWeekNumber();
+
+        }
+
+
+
+
+
 }
+

@@ -18,7 +18,8 @@ public class WeekPlan {
     public WeekPlan() {
         allEmployees = service.getAllEmployees();
         weekNumber = generateWeekNumber();
-        allEmployees.stream().filter(e->e.getGroup()%weekNumber==0).forEach(e->workingEmployeesThisWeek.add(e));
+        System.out.println(weekNumber);
+        //allEmployees.stream().filter(e->e.getGroup()%weekNumber==0).forEach(e->workingEmployeesThisWeek.add(e));
 
 
     }
