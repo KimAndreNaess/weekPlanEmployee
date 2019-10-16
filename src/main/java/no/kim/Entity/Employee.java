@@ -7,7 +7,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int group;
-    LocalDate registrert;
+    private LocalDate registrert;
 
 
 
@@ -39,10 +39,10 @@ public class Employee {
     public void setGroup(int group) {
         this.group = group;
     }
-
+    /*
     public void setRegistrert(LocalDate registrert) {
         this.registrert = registrert;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -56,11 +56,13 @@ public class Employee {
         return lastName;
     }
 
+
     public int getGroup() {
         return group;
     }
+    /*
     public LocalDate getRegistrert() {
         return registrert;
-    }
+    }*/
 
 }

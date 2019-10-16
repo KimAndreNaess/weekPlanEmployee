@@ -36,7 +36,6 @@ public class FakeEmployeeRepository implements EmployeeDao {
     @Override
     public void upDateEmployee(Employee employee){
         Employee e = employees.get(employee.getId());
-        e.setGroup(employee.getGroup());
         e.setFirstName(e.getFirstName());
         e.setLastName(e.getLastName());
         employees.put(employee.getId(), employee);
